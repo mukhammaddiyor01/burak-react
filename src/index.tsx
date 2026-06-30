@@ -11,6 +11,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import theme from "./app/MaterialTheme";
 
 const container = document.getElementById('root');
+// @ts-ignore
 const root = createRoot(container);
 
 // Global integration => REDUX
