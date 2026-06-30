@@ -2,13 +2,11 @@ import React from "react";
 import { Container, Box, Stack } from "@mui/material";
 import { CssVarsProvider } from "@mui/joy/styles";
 import Card from '@mui/joy/Card';
-import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
 import CardOverflow from '@mui/joy/CardOverflow';
 import Divider from "../../components/divider";
 import AspectRatio from "@mui/joy/AspectRatio";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import { Css } from "@mui/icons-material";
 
 const newDishes = [
     { productName: "Cutlet", imagePath: "/img/cutlet.webp"},
@@ -23,9 +21,10 @@ export default function NewDishes() {
             <Container>
                 <Stack className={"main"}>
                     <Box className={"category-title"}>Fresh Menu</Box>
-                    <Stack className={"cards-frame"}>
-                        <CssVarsProvider>
-                            {newDishes.map((ele, index) => {
+                    <CssVarsProvider>
+                        <Stack className={"cards-frame"}>
+                            {newDishes.length !== 0 ? (
+                            newDishes.map((ele, index) => {
                                 return (
                                     <Card key={index} variant="outlined" className={"card"}>
                                         <CardOverflow>
@@ -55,10 +54,13 @@ export default function NewDishes() {
                                             </Stack>
                                         </CardOverflow>
                                     </Card>
-                                )
-                            })}
-                        </CssVarsProvider>
-                    </Stack>
+                                );
+                            })
+                            ) : (
+                                <Box className="no-data">New Products are not available!</Box>
+                            )}
+                        </Stack>
+                    </CssVarsProvider>
                 </Stack>
             </Container>
         </div>
