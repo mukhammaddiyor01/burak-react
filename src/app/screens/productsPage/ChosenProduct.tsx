@@ -5,11 +5,12 @@ import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Divider from "../../components/divider";
 import Button from "@mui/material/Button";
 import Rating from "@mui/material/Rating";
+import { useParams } from "react-router-dom"; // @ts-ignore
+import { FreeMode, Navigation, Thumbs } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import { FreeMode, Navigation, Thumbs } from "swiper";
 
 export default function ChosenProduct() {
   return (
@@ -31,7 +32,7 @@ export default function ChosenProduct() {
                     <img className="slider-image" src={ele} />
                   </SwiperSlide>
                 );
-              }
+              },
             )}
           </Swiper>
         </Stack>
@@ -39,6 +40,7 @@ export default function ChosenProduct() {
           <Box className={"info-box"}>
             <strong className={"product-name"}>Kebab</strong>
             <span className={"resto-name"}>Burak</span>
+            <span className={"resto-name"}>010-2469-4424</span>
             <Box className={"rating-box"}>
               <Rating name="half-rating" defaultValue={2.5} precision={0.5} />
               <div className={"evaluation-box"}>
@@ -48,7 +50,7 @@ export default function ChosenProduct() {
                 </div>
               </div>
             </Box>
-            <p className={"product-desc"}>Our best product</p>
+            <p className={"product-desc"}>No Description</p>
             <Divider height="1" width="100%" bg="#000000" />
             <div className={"product-price"}>
               <span>Price:</span>

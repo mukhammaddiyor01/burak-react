@@ -27,14 +27,13 @@ export default function Products() {
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Stack className={"avatar-big-box"}>
             <Stack className={"top-text"}>
-              <p>Burak Restaurant</p>
+              <p>Bumarak Restaurant</p>
               <Stack className={"single-search-big-box"}>
                 <input
                   type={"search"}
                   className={"single-search-input"}
                   name={"singleResearch"}
                   placeholder={"Type here"}
-                  value={""}
                 />
                 <Button
                   className={"single-button-search"}
@@ -114,7 +113,7 @@ export default function Products() {
                           <Badge badgeContent={20} color="secondary">
                             <RemoveRedEyeIcon
                               sx={{
-                                color: 20 ? "gray" : "white",
+                                color: true ? "gray" : "white",
                               }}
                             />
                           </Badge>
@@ -162,16 +161,16 @@ export default function Products() {
           <Box className={"category-title"}>Our Family Brands</Box>
           <Stack className={"brand-list"}>
             <Box className={"review-box"}>
-              <img src={"/img/gurme.webp"} />
+              <img src={"/img/gurme.png"} />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/sweets.webp"} />
+              <img src={"/img/seafood.png"} />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/seafood.webp"} />
+              <img src={"/img/doner.png"} />
             </Box>
             <Box className={"review-box"}>
-              <img src={"/img/doner.webp"} />
+              <img src={"/img/sweets.png"} />
             </Box>
           </Stack>
         </Container>
@@ -183,7 +182,7 @@ export default function Products() {
             <Box className={"title"}>Our address</Box>
             <iframe
               style={{ marginTop: "60px" }}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2996.363734762081!2d69.2267250514616!3d41.322703307863044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b9a0a33281d%3A0x9c5015eab678e435!2z0KDQsNC50YXQvtC9!5e0!3m2!1sko!2skr!4v1655461169573!5m2!1sko!2skr"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96326.03685561026!2d28.92022666528895!3d41.02112846139867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab82bea99445f%3A0x6ed7f4baceb4476c!2sMaiden&#39;s%20Tower!5e0!3m2!1sen!2skr!4v1757106097524!5m2!1sen!2skr"
               width="1320"
               height="500"
               referrerPolicy="no-referrer-when-downgrade"

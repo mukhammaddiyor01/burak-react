@@ -352,12 +352,15 @@
 
 .products-page .products .brands-logo .review-box {
   margin-top: 40px;
-  padding: 20px;
   width: 260px;
   height: 350px;
   display: flex;
   object-fit: fill;
-  box-shadow: 0px -1px 13px 5px #c8b3b340;
+  box-shadow: 0px -1px 13px 5px #bab2e3c4;
+  border-radius: 20px;
+}
+
+.products-page .products .brands-logo .review-box img {
   border-radius: 20px;
 }
 
@@ -578,7 +581,6 @@
 }
 
 /** ChosenProduct **/
-
 
 .products-page .chosen-product {
   position: relative;
