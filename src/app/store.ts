@@ -3,8 +3,9 @@ import reduxLogger from "redux-logger";
 import HomePage from './screens/homePage/index';
 import HomePageReducer from "./screens/homePage/slice";
 
+
 export const store = configureStore({
-  middleware: (getDefaultMiddleware) =>
+  middleware: (getDefaultMiddleware) =>   // redux-logger integration - bu bizga har bir changeni log qilib berar ekan
     // @ts-ignore
     getDefaultMiddleware().concat(reduxLogger),
   reducer: {
