@@ -28,6 +28,8 @@ export default function HomePage() {
   const {popularDishes} = useSelector(popularDishesRetriever);
     // SELECTOR = Store => Store
 
+  console.log(process)
+
   useEffect(() => {
       // Backend server data request => Data
         // slice: Data => Store    // Slice - bu backenddan qabul qilingan data ni Redux storega joylashadi
