@@ -17,6 +17,7 @@ const useBasket = () => {
           : item
       );
       setCartItems(cartUpdate);
+      localStorage.setItem("cartData", JSON.stringify(cartUpdate));
     } else {
       const cartUpdate = [...cartItems, {...input}];
       setCartItems(cartUpdate);
