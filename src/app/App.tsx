@@ -20,7 +20,7 @@ import { useGlobals } from "./hooks/useGlobals";
 function App() {
   const location = useLocation();
   const { setAuthMember, basket } = useGlobals();
-  const { onAdd } = basket;
+  const { onAdd, onDeleteAll } = basket;
   const [ signupOpen, setSignupOpen ] = useState<boolean>(false);
   const[ loginOpen, setLoginOpen ] = useState<boolean>(false);
   const [ anchorEl, setAnchorEl ] = useState<HTMLElement | null>(null);
@@ -40,6 +40,7 @@ const handleLogoutRequest = async () => {
 
     await sweetTopSuccessAlert("success", 700);
     setAuthMember(null);
+    onDeleteAll();
   } catch(err) {
     console.log(err);
     sweetErrorHandling(Messages.error1);
