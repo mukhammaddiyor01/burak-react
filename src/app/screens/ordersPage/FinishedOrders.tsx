@@ -4,16 +4,15 @@ import TabPanel from "@mui/lab/TabPanel";
 
 import { useSelector } from 'react-redux';
 import { createSelector } from "reselect";
-import { retrieveProcessOrders } from "./selector";
+import { retrieveFinishedOrders } from "./selector";
 import { Product } from "../../../lib/types/product";
-import { ProductCollection } from "../../../lib/enums/product.enum";
 import { serverApi } from "../../../lib/config";
 import { Order, OrderItem } from "../../../lib/types/order";
 
 
 /** REDUX SLICE & SELECTOR */
 const finishedOrdersRetriever = createSelector(
-  retrieveProcessOrders,
+  retrieveFinishedOrders,
   (finishedOrders) => ({finishedOrders})
 );
 

@@ -14,9 +14,12 @@ const ContextProvider: React.FC<{children: ReactNode}> = ({ children }) => {
         : null
     );
     const basket = useBasket();
+
+    const [orderBuilder, setOrderBuilder] = useState<Date>(new Date());
     console.log("===== verify =====");
 
-    return (<GlobalContext.Provider value={{authMember, setAuthMember, basket}}>
+
+    return (<GlobalContext.Provider value={{authMember, setAuthMember, basket, orderBuilder, setOrderBuilder}}>
         {children}
     </GlobalContext.Provider> 
     );

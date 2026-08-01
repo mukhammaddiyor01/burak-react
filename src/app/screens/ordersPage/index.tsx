@@ -8,14 +8,13 @@ import PausedOrders from "./PausedOrders";
 import ProcessOrders from "./ProcessOrders";
 import FinishedOrders from "./FinishedOrders";
 import { Dispatch } from "@reduxjs/toolkit";
-import { Product } from "../../../lib/types/product";
-import { Member } from "../../../lib/types/member";
 import { setfinishedOrders, setpausedOrders, setprocessOrders } from "./slice"
 import { Order, OrderInquiry } from "../../../lib/types/order";
-import "../../../css/order.css";
 import { useDispatch } from "react-redux";
 import { OrderStatus } from "../../../lib/enums/order.enum";
 import OrderService from "../../services/OrderService";
+import { useGlobals } from "../../hooks/useGlobals";
+import "../../../css/order.css";
 
 
 /** REDUX SLICE & SELECTOR */
@@ -32,6 +31,7 @@ export default function OrdersPage() {
     setpausedOrders,
     setprocessOrders,
   } = actionDispatch(useDispatch());
+  const {orderBuilder} = useGlobals();
   const [value, setValue] = useState("1");
   const [orderInquiry, setOrderInquiry] = useState<OrderInquiry>(
     {page: 1,
@@ -55,7 +55,7 @@ export default function OrdersPage() {
     order.getMyOrders({...orderInquiry, orderStatus: OrderStatus.FINISH})
     .then(data => setfinishedOrders(data))
     .catch((err) => console.log(err));
-  }, [orderInquiry]);
+  }, [orderInquiry, orderBuilder]);
 
   /* HANDLERS */
 
@@ -83,8 +83,8 @@ export default function OrdersPage() {
               </Box>
             </Box>
             <Stack className={"order-main-content"}>
-              <PausedOrders />
-              <ProcessOrders />
+              <PausedOrders setValue={setValue}/>
+              <ProcessOrders setValue={setValue}/>
               <FinishedOrders />
             </Stack>
           </TabContext>

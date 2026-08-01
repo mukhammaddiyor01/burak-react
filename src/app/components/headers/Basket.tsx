@@ -14,9 +14,8 @@ import OrderService from "../../services/OrderService";
 import { useHistory } from "react-router-dom";
 
 export default function Basket() {
-  const { basket } = useGlobals();
-  const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = basket;
-  const { authMember } = useGlobals();
+  const { authMember, basket, setOrderBuilder } = useGlobals();
+    const { cartItems, onAdd, onRemove, onDelete, onDeleteAll } = basket;
   const history = useHistory();
   const itemsPrice: number = cartItems.reduce(
     (a: number, c: CartItem) => a + c.quantity * c.price, 
@@ -48,6 +47,7 @@ export default function Basket() {
       onDeleteAll();
 
       // REFRESH VIA CONTEXT
+      setOrderBuilder(new Date());
       history.push("/orders");
 
     }catch(err) {
@@ -163,3 +163,7 @@ export default function Basket() {
     </Box>
   );
 }
+function setOrderBuilder(arg0: Date) {
+  throw new Error("Function not implemented.");
+}
+
